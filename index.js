@@ -1,3 +1,4 @@
+// -_-
 let PokedexData = [
   {
     name: "bulbasaur",
@@ -98,3 +99,39 @@ let PokedexData = [
     url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/97.png",
   },
 ];
+
+// Global Declarations
+let newPokeGrid = document.querySelector(".pokeGrid");
+let filterBoxes = document.querySelectorAll("[name=typeFilter]");
+console.log(filterBoxes);
+
+addEventListener("DOMContentLoaded", () => {
+  PokedexData.forEach((pokemon) => {
+    // Create the Card element and all its accessoriresaasalsfjnaf
+    let newCard = document.createElement("div");
+    newCard.classList.add("card");
+    let newPokeName = document.createElement("h2");
+    newPokeName.classList.add("pokeName");
+    let newPokeImg = document.createElement("div");
+    newPokeImg.classList.add("pokeImg");
+    let newType = document.createElement("h3");
+    newType.classList.add("typeOf");
+    let newWeight = document.createElement("h4");
+    newWeight.classList.add("weight");
+    let newHeight = document.createElement("h4");
+    newHeight.classList.add("height");
+
+    //Appending values to the accessorires
+    newPokeName.textContent = pokemon.name;
+    newPokeImg.style.backgroundImage = `url(${pokemon.url})`;
+    newType.textContent = pokemon.type;
+    newWeight.textContent = pokemon.weight;
+    newHeight.textContent = pokemon.height;
+
+    // Appending to the Card div
+    newCard.append(newPokeName, newPokeImg, newType, newWeight, newHeight);
+
+    // Appending to pokeGrid
+    newPokeGrid.appendChild(newCard);
+  });
+});

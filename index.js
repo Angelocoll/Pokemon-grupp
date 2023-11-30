@@ -104,6 +104,22 @@ let PokedexData = [
 let newPokeGrid = document.querySelector(".pokeGrid");
 let filterBoxes = document.querySelectorAll("[name=typeFilter]");
 console.log(filterBoxes);
+//loopar igenom alla checkboxar
+filterBoxes.forEach((checkbox) => {
+  //sätter en eventlistner på varje
+  checkbox.addEventListener("click", () => {
+    // Skapa en array för att lagra markerade checkbox-värden
+    let checkedCheckboxes = [];
+
+    // Loopa igenom varje markerad checkbox för att hämta dess värde
+    document
+      .querySelectorAll("[name=typeFilter]:checked")
+      .forEach((checked) => {
+        //pushar in alla checkade checkboxars value in i nya arrayen
+        checkedCheckboxes.push(checked.value);
+      });
+  });
+});
 
 addEventListener("DOMContentLoaded", () => {
   PokedexData.forEach((pokemon) => {

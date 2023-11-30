@@ -11,15 +11,13 @@ body {
   font-size: 1.6rem;
   background: rgb(0, 174, 255);
 }
-.header{
-  
-  background: rgb(255, 56, 56);
-}
 
 .conatiner {
   width: 80rem;
   margin: 10rem auto;
   text-align: center;
+  background: rgb(255, 56, 56);
+  padding: 2rem 2rem 5rem;
 }
 
 .pokeGrid {
@@ -58,7 +56,15 @@ body {
 h4 {
   align-self: flex-start;
 }
-.Ram{
+
+.buttons {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem auto 0;
+}
+
+/* .Ram{
   width: 8%;
   height: 50rem;
   background: rgb(255, 56, 56);
@@ -81,5 +87,15 @@ h4 {
   height: 3rem;
   width: 3rem;
   border-radius: 100%;
+} */
+
+.btnIcon {
+  font-size: 3rem;
+  background: transparent;
+  outline: none;
+  border: none;
 }
 
+.btnIcon i {
+  color: white;
+}

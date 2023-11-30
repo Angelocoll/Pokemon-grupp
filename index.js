@@ -194,3 +194,10 @@ function drawCards(checkedCheckboxes) {
     });
   });
 }
+let DivInput = document.querySelector(".inputDiv");
+let AddBtn = document.querySelector("#AddBtn");
+AddBtn.addEventListener("click", () => {
+  let inputName = document.createElement("input");
+  inputName.setAttribute("placeholder", "Pokemon Name");
+  DivInput.append(inputName);
+});

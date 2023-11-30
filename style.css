@@ -10,3 +10,43 @@ html {
 body {
   font-size: 1.6rem;
 }
+
+.conatiner {
+  width: 80rem;
+  margin: 10rem auto;
+  text-align: center;
+}
+
+.pokeGrid {
+  display: grid;
+  grid-auto-rows: minmax(20rem, 20rem);
+  grid-template-columns: repeat(3, 1fr);
+  height: 50rem;
+  border: 1px solid black;
+  padding: 0.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  border: 1px solid salmon;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.pokeImg {
+  height: 10rem;
+  aspect-ratio: 1 / 1;
+  background-image: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png);
+  background-size: cover;
+  border: 1px solid silver;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.card h3,
+h4 {
+  align-self: flex-start;
+}

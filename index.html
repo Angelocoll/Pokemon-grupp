@@ -1,21 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="index.js" defer></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Bellefair&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300&family=Raleway:wght@100;200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
-</head>
+      href="https://fonts.googleapis.com/css2?family=Bellefair&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300&family=Raleway:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-    <h1></h1>
-</body>
-
+  <body>
+    <div class="conatiner">
+      <div class="header">
+        <h1>PokeDex</h1>
+        <input type="checkbox" name="typeFilter" id="normal" />
+        <label for="normal">normal</label>
+        <input type="checkbox" name="typeFilter" id="electric" />
+        <label for="electric">electric</label>
+        <input type="checkbox" name="typeFilter" id="fire" />
+        <label for="fire">fire</label>
+        <input type="checkbox" name="typeFilter" id="grass" />
+        <label for="grass">grass</label>
+        <input type="checkbox" name="typeFilter" id="water" />
+        <label for="water">water</label>
+        <input type="checkbox" name="typeFilter" id="psychic" />
+        <label for="psychic">psychic</label>
+        <input type="checkbox" name="typeFilter" id="all" checked />
+        <label for="all">All</label>
+      </div>
+      <div class="pokeGrid">
+        <div class="card">
+          <h2 class="pokeName">Pokemon</h2>
+          <div class="pokeImg"></div>
+          <h3 class="typeOf">Grass</h3>
+          <h4>Wight:</h4>
+          <h4>Height:</h4>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

@@ -118,6 +118,8 @@ filterBoxes.forEach((checkbox) => {
         //pushar in alla checkade checkboxars value in i nya arrayen
         checkedCheckboxes.push(checked.value);
       });
+
+    drawCards(checkedCheckboxes);
   });
 });
 
@@ -141,8 +143,8 @@ addEventListener("DOMContentLoaded", () => {
     newPokeName.textContent = pokemon.name;
     newPokeImg.style.backgroundImage = `url(${pokemon.url})`;
     newType.textContent = pokemon.type;
-    newWeight.textContent = pokemon.weight;
-    newHeight.textContent = pokemon.height;
+    newWeight.textContent = "Weight: " + pokemon.weight;
+    newHeight.textContent = "Height: " + pokemon.height;
 
     // Appending to the Card div
     newCard.append(newPokeName, newPokeImg, newType, newWeight, newHeight);
@@ -151,3 +153,44 @@ addEventListener("DOMContentLoaded", () => {
     newPokeGrid.appendChild(newCard);
   });
 });
+
+function drawCards(checkedCheckboxes) {
+  console.log(checkedCheckboxes);
+  newPokeGrid.innerHTML = "";
+
+  checkedCheckboxes.forEach((checkbox) => {
+    let filterdPokemon = PokedexData.filter((pokemon) => {
+      return pokemon.type === checkbox || checkbox === "all";
+    });
+    console.log(checkbox);
+    console.log(filterdPokemon);
+
+    filterdPokemon.forEach((pokemon) => {
+      let newCard = document.createElement("div");
+      newCard.classList.add("card");
+      let newPokeName = document.createElement("h2");
+      newPokeName.classList.add("pokeName");
+      let newPokeImg = document.createElement("div");
+      newPokeImg.classList.add("pokeImg");
+      let newType = document.createElement("h3");
+      newType.classList.add("typeOf");
+      let newWeight = document.createElement("h4");
+      newWeight.classList.add("weight");
+      let newHeight = document.createElement("h4");
+      newHeight.classList.add("height");
+
+      //Appending values to the accessorires
+      newPokeName.textContent = pokemon.name;
+      newPokeImg.style.backgroundImage = `url(${pokemon.url})`;
+      newType.textContent = pokemon.type;
+      newWeight.textContent = "Weight: " + pokemon.weight;
+      newHeight.textContent = "Height: " + pokemon.height;
+
+      // Appending to the Card div
+      newCard.append(newPokeName, newPokeImg, newType, newWeight, newHeight);
+
+      // Appending to pokeGrid
+      newPokeGrid.appendChild(newCard);
+    });
+  });
+}
